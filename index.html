@@ -1498,6 +1498,54 @@
   .rform-btn { width: 100%; max-width: 320px; padding: 18px 40px; font-size: 15px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; cursor: pointer; }
   .rform-btn:disabled { opacity: 0.6; cursor: not-allowed; }
   @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ── HERO RATINGS & SOURCES ── */
+  .hero-ratings {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .hero-rating { text-decoration: none; display: block; }
+  .hero-rating .hero-stat-num { font-size: 24px; }
+  .hero-rating:hover .hero-stat-num { color: #ff8534; }
+  .hero-award { height: 64px; width: auto; display: block; }
+  .rating-sources {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    width: 100%;
+    max-width: 560px;
+  }
+  .rating-source {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px 12px;
+    text-align: center;
+  }
+  .rating-source-name {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-bottom: 6px;
+  }
+  .rating-source-stars { color: #ffd700; font-size: 13px; margin: 4px 0; }
+  .rating-source .yandex-badge-rating { font-size: 26px; }
+  .rating-source .yandex-badge-info { font-size: 12px; color: var(--warm-gray); }
+  .rating-source a {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--orange);
+    text-decoration: none;
+  }
+  @media (max-width: 560px) {
+    .rating-sources { grid-template-columns: 1fr; }
+    .hero-award { height: 52px; }
+  }
 </style>
 </head>
 <body>
@@ -1581,9 +1629,20 @@
           <div class="hero-stat-num">4–6</div>
           <div class="hero-stat-label">недель до результата</div>
         </div>
-        <div>
-          <div class="hero-stat-num">4.9★</div>
-          <div class="hero-stat-label">рейтинг Яндекса</div>
+        <div class="hero-ratings">
+          <a class="hero-rating" href="https://yandex.ru/maps/org/161731126357" target="_blank" rel="noopener">
+            <div class="hero-stat-num">5.0★</div>
+            <div class="hero-stat-label">Яндекс · 50 отзывов</div>
+          </a>
+          <a class="hero-rating" href="https://2gis.ru/penza/firm/70000001063806529" target="_blank" rel="noopener">
+            <div class="hero-stat-num">5.0★</div>
+            <div class="hero-stat-label">2ГИС · 33 отзыва</div>
+          </a>
+          <a class="hero-rating" href="https://dikidi.app/1785491?p=2.pi-po-ssm&o=7" target="_blank" rel="noopener">
+            <div class="hero-stat-num">5.0★</div>
+            <div class="hero-stat-label">DIKIDI · 47 оценок</div>
+          </a>
+          <img class="hero-award" src="khoroshee-mesto-2026.png" alt="Хорошее место 2026 от Яндекс Карт" loading="lazy">
         </div>
         <div>
           <div class="hero-stat-num">10+</div>
@@ -1771,7 +1830,7 @@
           <div class="service-name">Экспресс-Скульптор</div>
           <p class="service-desc">Быстрый старт. Фокус на уменьшение объёмов — комплексное воздействие VelaShape + Кавитация + LPG + Прессотерапия. 11 процедур за 6 сеансов.</p>
           <div class="service-meta">
-            <div class="service-price">14 990 ₽ <small>2 498 ₽/сеанс</small></div>
+            <div class="service-price">15 990 ₽ <small>2 665 ₽/сеанс</small></div>
             <div class="service-sessions"><strong>6</strong> сеансов</div>
           </div>
         </div>
@@ -1786,7 +1845,7 @@
           <div class="service-name">Антицеллюлит-Детокс</div>
           <p class="service-desc">Борьба с целлюлитом, подтяжка и упругость кожи. VelaShape + LPG + Прессотерапия + RF-Лифтинг. 14 процедур за 9 сеансов.</p>
           <div class="service-meta">
-            <div class="service-price">17 990 ₽ <small>1 999 ₽/сеанс</small></div>
+            <div class="service-price">19 990 ₽ <small>2 221 ₽/сеанс</small></div>
             <div class="service-sessions"><strong>9</strong> сеансов</div>
           </div>
         </div>
@@ -1801,7 +1860,7 @@
           <div class="service-name">Тотальная Трансформация</div>
           <p class="service-desc">Полный цикл коррекции фигуры. VelaShape + Кавитация + LPG + Прессотерапия. 22 процедуры за 12 сеансов — лучшая цена за сеанс.</p>
           <div class="service-meta">
-            <div class="service-price">21 990 ₽ <small>1 833 ₽/сеанс</small></div>
+            <div class="service-price">24 990 ₽ <small>2 083 ₽/сеанс</small></div>
             <div class="service-sessions"><strong>12</strong> сеансов</div>
           </div>
         </div>
@@ -1820,7 +1879,7 @@
           <div class="service-name">Турбо-Слим</div>
           <p class="service-desc">Мощный удар по жиру. VelaShape + УЗ Кавитация. 10 процедур за 5 сеансов. Выгода <strong>4 460 ₽ (−27%)</strong> по сравнению с отдельными сеансами.</p>
           <div class="service-meta">
-            <div class="service-price">11 990 ₽ <small>2 398 ₽/сеанс</small></div>
+            <div class="service-price">12 990 ₽ <small>2 598 ₽/сеанс</small></div>
             <div class="service-sessions"><strong>5</strong> сеансов</div>
           </div>
         </div>
@@ -1832,10 +1891,24 @@
           <div class="service-name">Анти-Отёк</div>
           <p class="service-desc">Идеально для лимфодренажа. LPG + Прессотерапия. 10 процедур за 5 сеансов. Снятие отёков и борьба с целлюлитом. Выгода <strong>2 460 ₽ (−20%)</strong> по сравнению с отдельными сеансами.</p>
           <div class="service-meta">
-            <div class="service-price">9 990 ₽ <small>1 998 ₽/сеанс</small></div>
+            <div class="service-price">11 990 ₽ <small>2 398 ₽/сеанс</small></div>
             <div class="service-sessions"><strong>5</strong> сеансов</div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top:60px;">
+      <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--warm-gray);margin-bottom:32px;padding-bottom:16px;border-bottom:1px solid var(--border);">Дополнительные услуги</div>
+      <div class="services-grid">
+        <a href="lpg-massazh-penza.html" class="service-card" style="text-decoration:none;color:inherit;padding:28px;display:block;">
+          <div class="service-name">LPG-массаж в Пензе</div>
+          <p class="service-desc" style="margin:0;">Лимфодренаж и тонус кожи на аппарате LPG Perfect Neo. Пробный сеанс 600 ₽ →</p>
+        </a>
+        <a href="lazernaya-epilyaciya-penza.html" class="service-card" style="text-decoration:none;color:inherit;padding:28px;display:block;">
+          <div class="service-name">Лазерная эпиляция в Пензе</div>
+          <p class="service-desc" style="margin:0;">Индивидуальный подбор параметров и курс в центре города →</p>
+        </a>
       </div>
     </div>
 
@@ -1906,15 +1979,28 @@
         <div class="section-label">Отзывы клиенток</div>
         <h2 class="section-title">Они уже <span>видят результат</span></h2>
       </div>
-      <div class="yandex-badge">
-        <div>
-          <div class="yandex-badge-rating" id="reviewsRating">4.9</div>
-          <div class="yandex-badge-info">
-            <span class="yandex-badge-stars">★★★★★</span>
-            <span id="reviewsCount">28</span> отзывов на Яндекс Картах
-          </div>
+      <div class="rating-sources">
+        <div class="rating-source">
+          <div class="rating-source-name">Яндекс Карты</div>
+          <div class="yandex-badge-rating" id="reviewsRating">5.0</div>
+          <div class="rating-source-stars">★★★★★</div>
+          <div class="yandex-badge-info"><span id="reviewsCount">50</span> отзывов</div>
+          <a href="https://yandex.ru/maps/org/161731126357" target="_blank" rel="noopener">Смотреть отзывы →</a>
         </div>
-        <iframe src="https://yandex.ru/sprav/widget/rating-badge/161731126357?type=award&theme=dark" width="150" height="50" frameborder="0" loading="lazy" style="display:block;"></iframe>
+        <div class="rating-source">
+          <div class="rating-source-name">2ГИС</div>
+          <div class="yandex-badge-rating">5.0</div>
+          <div class="rating-source-stars">★★★★★</div>
+          <div class="yandex-badge-info">33 отзыва</div>
+          <a href="https://2gis.ru/penza/firm/70000001063806529" target="_blank" rel="noopener">Смотреть отзывы →</a>
+        </div>
+        <div class="rating-source">
+          <div class="rating-source-name">DIKIDI</div>
+          <div class="yandex-badge-rating">5.0</div>
+          <div class="rating-source-stars">★★★★★</div>
+          <div class="yandex-badge-info">47 оценок · 26 отзывов</div>
+          <a href="https://dikidi.app/1785491?p=2.pi-po-ssm&o=7" target="_blank" rel="noopener">Смотреть отзывы →</a>
+        </div>
       </div>
     </div>
     <div class="reviews-grid reveal" id="reviewsGrid"></div>
@@ -2143,6 +2229,8 @@
             <li><a href="#specialist">Специалист</a></li>
             <li><a href="#reviews">Отзывы</a></li>
             <li><a href="#blog">Экспертиза</a></li>
+            <li><a href="lpg-massazh-penza.html">LPG-массаж в Пензе</a></li>
+            <li><a href="lazernaya-epilyaciya-penza.html">Лазерная эпиляция в Пензе</a></li>
             <li><a href="https://dikidi.app/1785491?p=2.pi-po-ssm&o=7&utm_source=site&utm_medium=organic&utm_campaign=footer&utm_content=footer_price" target="_blank" onclick="ym(108172384,'reachGoal','dikidi_click')">Весь прайс на Dikidi</a></li>
           </ul>
         </div>
@@ -2332,7 +2420,7 @@ const results = [
     key: "protocol0",
     title: "Протокол «Антицеллюлит-Детокс»",
     desc: "Максимальная синергия против целлюлита: VelaShape + LPG + Прессотерапия + RF-Лифтинг. 9 сеансов, 4,5 недели.",
-    price: "17 990 ₽", sub: "1 999 ₽/сеанс",
+    price: "19 990 ₽", sub: "2 221 ₽/сеанс",
     why: "VelaShape прогревает жировую ткань и усиливает кровоток, LPG активирует лимфодренаж и выводит лишнее — вместе они дают эффект, недостижимый каждым аппаратом по отдельности. RF-лифтинг подтягивает кожу по мере уменьшения объёмов, чтобы результат выглядел красиво, а не просто «минус сантиметры».",
     result: "минус 3–7 см в проблемных зонах, выравнивание текстуры кожи, снятие отёчности — первые изменения заметны уже после 3–4 сеансов."
   },
@@ -2340,7 +2428,7 @@ const results = [
     key: "protocol1",
     title: "Протокол «Экспресс-Скульптор»",
     desc: "Быстрое уменьшение объёмов: VelaShape + Кавитация + LPG + Прессотерапия. 6 сеансов, 3 недели.",
-    price: "14 990 ₽", sub: "2 498 ₽/сеанс",
+    price: "15 990 ₽", sub: "2 665 ₽/сеанс",
     why: "Кавитация точечно разрушает жировые клетки, VelaShape усиливает их выведение, LPG и прессотерапия ускоряют лимфоток — тело выводит всё лишнее в короткие сроки. Протокол создан для тех, кому важен видимый результат уже через 3 недели.",
     result: "заметное уменьшение объёмов и визуальная подтянутость за минимальное время."
   },
@@ -2348,7 +2436,7 @@ const results = [
     key: "protocol2",
     title: "Протокол «Тотальная Трансформация»",
     desc: "Полный цикл коррекции фигуры. 12 сеансов, 6 недель, 22 процедуры. Лучший результат на длительное время.",
-    price: "21 990 ₽", sub: "1 833 ₽/сеанс",
+    price: "24 990 ₽", sub: "2 083 ₽/сеанс",
     why: "Это полный цикл работы с телом: сначала разрушаем жировые отложения, затем формируем силуэт, параллельно улучшаем качество кожи. 6 недель — оптимальный срок, за который тело успевает перестроиться, а результат закрепляется надолго. Самый высокий эффект среди всех наших программ.",
     result: "комплексная коррекция фигуры, улучшение качества кожи, долгосрочный результат без эффекта «отката»."
   },
@@ -2356,7 +2444,7 @@ const results = [
     key: "protocol3",
     title: "Комбо «Анти-Отёк»",
     desc: "Идеальный лимфодренаж: LPG + Прессотерапия. 5 сеансов, снятие отёков и коррекция фигуры.",
-    price: "9 990 ₽", sub: "1 998 ₽/сеанс",
+    price: "11 990 ₽", sub: "2 398 ₽/сеанс",
     why: "LPG механически активирует лимфатические сосуды и разбивает застои, прессотерапия усиливает отток лимфы по всему телу. В паре они работают значительно эффективнее, чем каждая процедура отдельно — особенно при выраженной отёчности ног, живота и рук.",
     result: "снятие отёчности, лёгкость в теле, уменьшение объёмов за счёт вывода лишней жидкости."
   },
@@ -2677,8 +2765,8 @@ document.getElementById('exitPopup').addEventListener('click', function(e) {
     .then(renderReviews)
     .catch(() => {
       renderReviews({
-        rating: "4.9",
-        count: 29,
+        rating: "5.0",
+        count: 50,
         reviews: [
           { stars: 5, include: true, text: "«Мне все нравится, была не на одной процедуре. Всегда приятная атмосфера, цены очень адекватные. Татьяна мастер своего дела. Большой выбор аппаратных процедур как для тела, так и для лица.»", name: "Екатерина Сидорова", date: "10 марта 2026 · Яндекс Карты" },
           { stars: 5, text: "«Прошла курс LPG-массажа у Татьяны — заметно улучшился тонус кожи, уменьшился проявившийся целлюлит, исчезли отёки. Процедура оказалась приятной и безболезненной, сразу почувствовалась лёгкость и свежесть. Очень довольна полученным эффектом и с уверенностью рекомендую!»", name: "Татьяна Г.", date: "15 июля 2025 · Яндекс Карты" },
